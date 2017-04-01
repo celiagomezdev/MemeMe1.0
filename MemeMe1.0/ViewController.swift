@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var imagePickerView: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
@@ -16,18 +16,43 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
     
+    private func configureText(_ textField: UITextField) {
+        
+        let centeringText = NSMutableParagraphStyle()
+        centeringText.alignment = .center
+       
+        let memeTextAttributes: [String:Any] = [
+            NSStrokeColorAttributeName : UIColor.black,
+            NSForegroundColorAttributeName : UIColor.white,
+            NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
+            NSStrokeWidthAttributeName : -5.0,
+            NSParagraphStyleAttributeName : centeringText
+        ]
+        
+        textField.defaultTextAttributes = memeTextAttributes
+        textField.delegate = self
+        
+        switch textField.tag {
+        case 0:
+            textField.text = "TOP"
+        case 1:
+            textField.text = "BOTTOM"
+        default:
+            break
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        topTextField.placeholder = "Top text"
-        topTextField.textAlignment = NSTextAlignment.center
-        bottomTextField.placeholder = "Bottom text"
-        bottomTextField.textAlignment = NSTextAlignment.center
+        configureText(topTextField)
+        configureText(bottomTextField)
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
     }
+    
     
     func imagePickerController(_ picker: UIImagePickerController,
     didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -54,6 +79,31 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imagePicker.sourceType = .camera
         self.present(imagePicker, animated: true, completion: nil)
     }
-
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.text = ""
+    
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true;
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        print("textFieldDidEndEditing \(textField.tag)")
+        textField.resignFirstResponder()
+        if (textField.text?.isEmpty)! {
+            switch textField.tag {
+            case 0:
+                textField.text = "TOP"
+            case 1:
+                textField.text = "BOTTOM"
+            default:
+                break
+            }
+        }
+    }
+    
 }
 
