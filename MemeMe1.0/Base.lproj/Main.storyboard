@@ -41,13 +41,13 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mky-Qp-qtZ">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mky-Qp-qtZ">
                                 <rect key="frame" x="60" y="95" width="254" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kRc-SY-fWN">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kRc-SY-fWN">
                                 <rect key="frame" x="60" y="523" width="254" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -72,9 +72,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomTextField" destination="kRc-SY-fWN" id="P63-8J-u5v"/>
                         <outlet property="cameraButton" destination="9RN-C6-qrd" id="mDX-PW-pn2"/>
                         <outlet property="imagePickerView" destination="avu-5a-UTw" id="kKv-OY-7Hr"/>
                         <outlet property="pickImageFromAlbum" destination="FQH-hH-GJu" id="oHL-2P-44W"/>
+                        <outlet property="topTextField" destination="mky-Qp-qtZ" id="nkn-IU-DxR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
