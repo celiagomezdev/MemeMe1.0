@@ -42,13 +42,13 @@
                                 </items>
                             </toolbar>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mky-Qp-qtZ">
-                                <rect key="frame" x="60" y="95" width="254" height="17"/>
+                                <rect key="frame" x="30" y="95" width="314" height="17"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kRc-SY-fWN">
-                                <rect key="frame" x="60" y="536" width="254" height="17"/>
+                                <rect key="frame" x="30" y="536" width="314" height="17"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
@@ -56,15 +56,15 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="mky-Qp-qtZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="44" id="0VG-2L-CeB"/>
+                            <constraint firstItem="mky-Qp-qtZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="14" id="0VG-2L-CeB"/>
                             <constraint firstItem="tHx-hp-9wt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="BVv-7f-K3N"/>
                             <constraint firstAttribute="trailing" secondItem="tHx-hp-9wt" secondAttribute="trailing" id="E0Y-TR-hZe"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="mky-Qp-qtZ" secondAttribute="trailing" constant="45" id="YCp-KO-Ocd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mky-Qp-qtZ" secondAttribute="trailing" constant="15" id="YCp-KO-Ocd"/>
                             <constraint firstItem="avu-5a-UTw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Z1F-Zo-f3I"/>
-                            <constraint firstItem="kRc-SY-fWN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="44" id="aqJ-ih-a50"/>
+                            <constraint firstItem="kRc-SY-fWN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="14" id="aqJ-ih-a50"/>
                             <constraint firstItem="tHx-hp-9wt" firstAttribute="top" secondItem="kRc-SY-fWN" secondAttribute="bottom" constant="70" id="czd-pm-DcH"/>
                             <constraint firstItem="avu-5a-UTw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="d12-5G-EMk"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="kRc-SY-fWN" secondAttribute="trailing" constant="45" id="fBb-dw-QNZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kRc-SY-fWN" secondAttribute="trailing" constant="15" id="fBb-dw-QNZ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="avu-5a-UTw" secondAttribute="trailing" id="gTC-a6-lUB"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="avu-5a-UTw" secondAttribute="bottom" id="hpq-Yd-a9H"/>
                             <constraint firstItem="mky-Qp-qtZ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="75" id="m9p-NF-3TW"/>
@@ -81,6 +81,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="52" y="57.121439280359823"/>
         </scene>
     </scenes>
 </document>
