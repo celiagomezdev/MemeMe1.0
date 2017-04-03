@@ -22,9 +22,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D0V-sV-QyY">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="Item" id="tyc-tS-TRf"/>
+                                </items>
+                            </toolbar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="avu-5a-UTw">
                                 <rect key="frame" x="16" y="20" width="343" height="647"/>
                             </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kRc-SY-fWN">
+                                <rect key="frame" x="30" y="536" width="314" height="17"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tHx-hp-9wt">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
@@ -42,13 +54,7 @@
                                 </items>
                             </toolbar>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mky-Qp-qtZ">
-                                <rect key="frame" x="30" y="95" width="314" height="17"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kRc-SY-fWN">
-                                <rect key="frame" x="30" y="536" width="314" height="17"/>
+                                <rect key="frame" x="30" y="139" width="314" height="17"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
@@ -57,25 +63,29 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="mky-Qp-qtZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="14" id="0VG-2L-CeB"/>
+                            <constraint firstItem="mky-Qp-qtZ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="119" id="5Yx-3C-VV5"/>
                             <constraint firstItem="tHx-hp-9wt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="BVv-7f-K3N"/>
                             <constraint firstAttribute="trailing" secondItem="tHx-hp-9wt" secondAttribute="trailing" id="E0Y-TR-hZe"/>
+                            <constraint firstAttribute="trailing" secondItem="D0V-sV-QyY" secondAttribute="trailing" id="OBe-Ct-zGc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="mky-Qp-qtZ" secondAttribute="trailing" constant="15" id="YCp-KO-Ocd"/>
                             <constraint firstItem="avu-5a-UTw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Z1F-Zo-f3I"/>
                             <constraint firstItem="kRc-SY-fWN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="14" id="aqJ-ih-a50"/>
+                            <constraint firstItem="D0V-sV-QyY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="axJ-Bc-TWP"/>
                             <constraint firstItem="tHx-hp-9wt" firstAttribute="top" secondItem="kRc-SY-fWN" secondAttribute="bottom" constant="70" id="czd-pm-DcH"/>
                             <constraint firstItem="avu-5a-UTw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="d12-5G-EMk"/>
                             <constraint firstAttribute="trailingMargin" secondItem="kRc-SY-fWN" secondAttribute="trailing" constant="15" id="fBb-dw-QNZ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="avu-5a-UTw" secondAttribute="trailing" id="gTC-a6-lUB"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="avu-5a-UTw" secondAttribute="bottom" id="hpq-Yd-a9H"/>
-                            <constraint firstItem="mky-Qp-qtZ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="75" id="m9p-NF-3TW"/>
+                            <constraint firstItem="D0V-sV-QyY" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="ojQ-yE-DiO"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="tHx-hp-9wt" secondAttribute="bottom" id="t7C-um-HYT"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="bottomTextField" destination="kRc-SY-fWN" id="P63-8J-u5v"/>
                         <outlet property="cameraButton" destination="9RN-C6-qrd" id="mDX-PW-pn2"/>
-                        <outlet property="imagePickerView" destination="avu-5a-UTw" id="kKv-OY-7Hr"/>
+                        <outlet property="imageView" destination="avu-5a-UTw" id="KUa-Lv-gfZ"/>
                         <outlet property="pickImageFromAlbum" destination="FQH-hH-GJu" id="oHL-2P-44W"/>
+                        <outlet property="toolBar" destination="tHx-hp-9wt" id="8SF-Lk-XcZ"/>
                         <outlet property="topTextField" destination="mky-Qp-qtZ" id="nkn-IU-DxR"/>
                     </connections>
                 </viewController>

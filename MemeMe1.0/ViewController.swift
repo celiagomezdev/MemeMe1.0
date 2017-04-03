@@ -6,15 +6,17 @@
 //  Copyright © 2017 Celia Gómez de Villavedón Pedrosa. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
-    @IBOutlet weak var imagePickerView: UIImageView!
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var pickImageFromAlbum: UIBarButtonItem!
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
+    @IBOutlet weak var toolBar: UIToolbar!
     
     private func configureText(_ textField: UITextField) {
         
@@ -46,6 +48,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         super.viewDidLoad()
         configureText(topTextField)
         configureText(bottomTextField)
+        
+        navigationController?.hidesBarsOnTap = true
 
     }
     
@@ -87,6 +91,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         if bottomTextField.isFirstResponder {
             view.frame.origin.y -= getKeyboardHeight(notification)
+//            topTextField.frame.origin.y -= getKeyboardHeight(notification)
         }
     }
     
@@ -94,6 +99,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         if bottomTextField.isFirstResponder {
             view.frame.origin.y += getKeyboardHeight(notification)
+//            topTextField.frame.origin.y += getKeyboardHeight(notification)
         }
     }
     
@@ -108,7 +114,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func imagePickerController(_ picker: UIImagePickerController,
     didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            imagePickerView.image = image
+            imageView.image = image
         }
         dismiss(animated: true, completion: nil)
     }
@@ -156,5 +162,36 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
     
+    struct Meme {
+        var topText: String?
+        var bottomText: String?
+        var originalImage: UIImage?
+        var memedImage: UIImage?
+    }
+    
+
+    func generateMemedImage() -> UIImage {
+        // Render view to an image
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        toolBar.isHidden = true
+        
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
+        let memeImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        toolBar.isHidden = false
+        
+        return memeImage
+    }
+    
+    func save() {
+        let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imageView.image!, memedImage: generateMemedImage())
+
+    }
+    
+    
+
 }
 
