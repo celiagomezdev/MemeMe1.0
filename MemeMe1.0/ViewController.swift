@@ -91,7 +91,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         if bottomTextField.isFirstResponder {
             view.frame.origin.y -= getKeyboardHeight(notification)
-//            topTextField.frame.origin.y -= getKeyboardHeight(notification)
+            topTextField.frame.origin.y -= getKeyboardHeight(notification)
         }
     }
     
@@ -99,7 +99,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         if bottomTextField.isFirstResponder {
             view.frame.origin.y += getKeyboardHeight(notification)
-//            topTextField.frame.origin.y += getKeyboardHeight(notification)
+            topTextField.frame.origin.y += getKeyboardHeight(notification)
         }
     }
     
