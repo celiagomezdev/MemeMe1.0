@@ -16,7 +16,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var pickImageFromAlbum: UIBarButtonItem!
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
-    @IBOutlet weak var toolBar: UIToolbar!
+    @IBOutlet weak var bottomToolBar: UIToolbar!
+    @IBOutlet weak var topToolBar: UIToolbar!
+    @IBOutlet weak var shareButton: UIBarButtonItem!
+    @IBOutlet weak var topTextFieldTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var topToolBarTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var imageViewTopConstraint: NSLayoutConstraint!
     
     private func configureText(_ textField: UITextField) {
         
@@ -91,7 +96,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         if bottomTextField.isFirstResponder {
             view.frame.origin.y -= getKeyboardHeight(notification)
-            topTextField.frame.origin.y -= getKeyboardHeight(notification)
+            topTextFieldTopConstraint.constant -= getKeyboardHeight(notification)
+            topToolBarTopConstraint.constant -= getKeyboardHeight(notification)
+            imageViewTopConstraint.constant -= getKeyboardHeight(notification)
+
         }
     }
     
@@ -99,7 +107,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         if bottomTextField.isFirstResponder {
             view.frame.origin.y += getKeyboardHeight(notification)
-            topTextField.frame.origin.y += getKeyboardHeight(notification)
+            topTextFieldTopConstraint.constant += getKeyboardHeight(notification)
+            topToolBarTopConstraint.constant += getKeyboardHeight(notification)
+            imageViewTopConstraint.constant += getKeyboardHeight(notification)
         }
     }
     
@@ -173,7 +183,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func generateMemedImage() -> UIImage {
         // Render view to an image
         self.navigationController?.setNavigationBarHidden(true, animated: false)
-        toolBar.isHidden = true
+        bottomToolBar.isHidden = true
         
         UIGraphicsBeginImageContext(self.view.frame.size)
         view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
@@ -181,7 +191,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         UIGraphicsEndImageContext()
         
         self.navigationController?.setNavigationBarHidden(false, animated: false)
-        toolBar.isHidden = false
+        bottomToolBar.isHidden = false
         
         return memeImage
     }
