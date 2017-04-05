@@ -62,7 +62,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
-        if (self.imageView.image == nil) && ((topTextField.text!.lenght = 0) || (bottomTextField.text!.length = 0)) {
+        if (self.imageView.image == nil) && ((topTextField.text!.characters.count == 0) || (bottomTextField.text!.characters.count == 0)) {
             shareButton.isEnabled = false
         }
         else {
@@ -167,16 +167,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func textFieldDidEndEditing(_ textField: UITextField) {
         print("textFieldDidEndEditing \(textField.tag)")
         textField.resignFirstResponder()
-        if (textField.text?.isEmpty)! {
-            switch textField.tag {
-            case 0:
-                textField.text = "TOP"
-            case 1:
-                textField.text = "BOTTOM"
-            default:
-                break
-            }
-        }
+//        if (textField.text?.isEmpty)! {
+//            switch textField.tag {
+//            case 0:
+//                textField.text = "TOP"
+//            case 1:
+//                textField.text = "BOTTOM"
+//            default:
+//                break
+//            }
+//        }
     }
     
     struct Meme {
