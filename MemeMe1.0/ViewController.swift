@@ -40,14 +40,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         textField.defaultTextAttributes = memeTextAttributes
         textField.delegate = self
         
-        switch textField.tag {
-        case 0:
-            textField.text = "TOP"
-        case 1:
-            textField.text = "BOTTOM"
-        default:
-            break
-        }
+//        switch textField.tag {
+//        case 0:
+//            textField.text = "TOP"
+//        case 1:
+//            textField.text = "BOTTOM"
+//        default:
+//            break
+//        }
     }
     
     override func viewDidLoad() {
@@ -62,7 +62,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
-        if (self.imageView.image == nil) && ((self.topTextField.text == nil) || (self.bottomTextField.text == nil)) {
+        if (self.imageView.image == nil) && ((topTextField.text!.lenght = 0) || (bottomTextField.text!.length = 0)) {
             shareButton.isEnabled = false
         }
         else {
