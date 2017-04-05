@@ -39,15 +39,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         textField.defaultTextAttributes = memeTextAttributes
         textField.delegate = self
-        
-//        switch textField.tag {
-//        case 0:
-//            textField.text = "TOP"
-//        case 1:
-//            textField.text = "BOTTOM"
-//        default:
-//            break
-//        }
+
     }
     
     override func viewDidLoad() {
@@ -167,16 +159,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func textFieldDidEndEditing(_ textField: UITextField) {
         print("textFieldDidEndEditing \(textField.tag)")
         textField.resignFirstResponder()
-//        if (textField.text?.isEmpty)! {
-//            switch textField.tag {
-//            case 0:
-//                textField.text = "TOP"
-//            case 1:
-//                textField.text = "BOTTOM"
-//            default:
-//                break
-//            }
-//        }
+
     }
     
     struct Meme {
