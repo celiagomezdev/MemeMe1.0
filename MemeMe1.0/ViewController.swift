@@ -23,6 +23,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var topToolBarTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var imageViewTopConstraint: NSLayoutConstraint!
     
+  
     private func configureText(_ textField: UITextField) {
         
         let centeringText = NSMutableParagraphStyle()
@@ -61,6 +62,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
+        if (self.imageView.image == nil) && ((self.topTextField.text == nil) || (self.bottomTextField.text == nil)) {
+            shareButton.isEnabled = false
+        }
+        else {
+            shareButton.isEnabled = true
+        }
         subscribeToKeyboardNotifications()
         subscribeToKeyboardWillHideNotifications()
     }
