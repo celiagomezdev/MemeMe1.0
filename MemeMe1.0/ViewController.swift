@@ -53,13 +53,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         if self.imageView.image == nil {
             shareButton.isEnabled = false
-            print("There is no image")
-        } else if (topTextField.text!.characters.count == 0) && (bottomTextField.text!.characters.count == 0) {
-            shareButton.isEnabled = false
-            print("Both texts are empty")
         } else {
             shareButton.isEnabled = true
-            print("We have an image and at least one text")
         }
         
         navigationController?.hidesBarsOnTap = true
