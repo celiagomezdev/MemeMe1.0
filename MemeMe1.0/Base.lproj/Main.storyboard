@@ -40,15 +40,15 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tHx-hp-9wt" userLabel="Bottom Tool Bar">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
-                                    <barButtonItem title="Album" id="FQH-hH-GJu">
-                                        <connections>
-                                            <action selector="pickAnImageFromAlbum:" destination="BYZ-38-t0r" id="Z5s-Iw-cV4"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="uok-qB-fKN"/>
                                     <barButtonItem systemItem="camera" id="9RN-C6-qrd">
                                         <connections>
                                             <action selector="pickAnImageFromCamera:" destination="BYZ-38-t0r" id="Xxv-gO-LmK"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="uok-qB-fKN"/>
+                                    <barButtonItem title="Album" id="FQH-hH-GJu">
+                                        <connections>
+                                            <action selector="pickAnImageFromAlbum:" destination="BYZ-38-t0r" id="Z5s-Iw-cV4"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
