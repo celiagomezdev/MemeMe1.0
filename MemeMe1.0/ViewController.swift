@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
-
+    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var pickImageFromAlbum: UIBarButtonItem!
@@ -23,12 +23,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var topToolBarTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var imageViewTopConstraint: NSLayoutConstraint!
     
-  
+    
     private func configureText(_ textField: UITextField) {
         
         let centeringText = NSMutableParagraphStyle()
         centeringText.alignment = .center
-       
+        
         let memeTextAttributes: [String:Any] = [
             NSStrokeColorAttributeName : UIColor.black,
             NSForegroundColorAttributeName : UIColor.white,
@@ -39,14 +39,25 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         textField.defaultTextAttributes = memeTextAttributes
         textField.delegate = self
-
+        
     }
+    
+    //Placeholder Text Attributes
+    let placeholderTextAttributes: [String:Any] = [
+        NSStrokeColorAttributeName : UIColor.black,
+        NSForegroundColorAttributeName : UIColor.white,
+        NSFontAttributeName : UIFont(name: "Impact", size: 40)!,
+        NSStrokeWidthAttributeName : -5.0,
+        ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureText(topTextField)
         configureText(bottomTextField)
-
+        topTextField.attributedPlaceholder = NSAttributedString(string: "TOP",
+                                                                attributes: placeholderTextAttributes)
+        bottomTextField.attributedPlaceholder = NSAttributedString(string: "BOTTOM",
+                                                                   attributes: placeholderTextAttributes)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -102,7 +113,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             topTextFieldTopConstraint.constant -= getKeyboardHeight(notification)
             topToolBarTopConstraint.constant -= getKeyboardHeight(notification)
             imageViewTopConstraint.constant -= getKeyboardHeight(notification)
-
+            
         }
     }
     
@@ -125,7 +136,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     
     func imagePickerController(_ picker: UIImagePickerController,
-    didFinishPickingMediaWithInfo info: [String : Any]) {
+                               didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             imageView.image = image
         }
@@ -135,7 +146,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
-
+    
     @IBAction func pickAnImageFromAlbum(_ sender: Any) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
@@ -152,7 +163,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.text = ""
-    
+        
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -163,7 +174,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func textFieldDidEndEditing(_ textField: UITextField) {
         print("textFieldDidEndEditing \(textField.tag)")
         textField.resignFirstResponder()
-
+        
     }
     
     struct Meme {
@@ -173,7 +184,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         var memedImage: UIImage?
     }
     
-
+    
     func generateMemedImage() -> UIImage {
         // Render view to an image
         self.navigationController?.setNavigationBarHidden(true, animated: false)
@@ -192,7 +203,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         return memeImage
     }
     
-  
+    
     @IBAction func share(_ sender: Any) {
         let image = generateMemedImage()
         let controller = UIActivityViewController(activityItems: [image], applicationActivities: nil)
@@ -215,6 +226,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     
-
+    
 }
 
