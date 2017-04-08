@@ -178,6 +178,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         // Render view to an image
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         bottomToolBar.isHidden = true
+        topToolBar.isHidden = true
         
         UIGraphicsBeginImageContext(self.view.frame.size)
         view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
@@ -186,13 +187,31 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         bottomToolBar.isHidden = false
+        topToolBar.isHidden = false
         
         return memeImage
     }
     
+  
+    @IBAction func share(_ sender: Any) {
+        let image = generateMemedImage()
+        let controller = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+        self.present(controller, animated: true, completion: nil)
+        controller.completionWithItemsHandler = completionHandler
+        
+    }
+    
+    func completionHandler(activityType: UIActivityType?, shared: Bool, items: [Any]?, error: Error?) {
+        if (shared) {
+            save()
+        }
+        else {
+            print("Bad user canceled sharing")
+        }
+    }
+    
     func save() {
         let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imageView.image!, memedImage: generateMemedImage())
-
     }
     
     
