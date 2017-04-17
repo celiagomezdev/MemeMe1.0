@@ -177,12 +177,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
     }
     
-    struct Meme {
-        var topText: String?
-        var bottomText: String?
-        var originalImage: UIImage?
-        var memedImage: UIImage?
-    }
     
     
     func generateMemedImage() -> UIImage {
@@ -221,11 +215,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
     
+
+    //Create a meme object and add it to the meme's array
     func save() {
+        //Update the meme
         let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imageView.image!, memedImage: generateMemedImage())
+        
+        //Add it to the meme array on the App Delegate
+        (UIApplication.shared.delegate as! AppDelegate).memes.append(meme)
+        
     }
-    
-    
-    
+ 
 }
 
