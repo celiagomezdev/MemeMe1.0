@@ -67,14 +67,14 @@
 				7EA3DBBD1E91815D00F05638 /* Impact.ttf */,
 				7EA3DBE91EA4C14A00F05638 /* Meme.swift */,
 				7E458D1C1E8956AD0005DE0F /* AppDelegate.swift */,
+				7E458D1E1E8956AD0005DE0F /* MemeEditorViewController.swift */,
 				7E27E5B41EA7C3B700DC8AF2 /* SentMemesCollectionViewController.swift */,
 				7E27E5B21EA7C36300DC8AF2 /* SentMemesTableViewController.swift */,
-				7E458D1E1E8956AD0005DE0F /* MemeEditorViewController.swift */,
+				7E27E5B61EA7D15500DC8AF2 /* SentMemesTableViewCell.swift */,
 				7E458D201E8956AD0005DE0F /* Main.storyboard */,
 				7E458D231E8956AD0005DE0F /* Assets.xcassets */,
 				7E458D251E8956AD0005DE0F /* LaunchScreen.storyboard */,
 				7E458D281E8956AD0005DE0F /* Info.plist */,
-				7E27E5B61EA7D15500DC8AF2 /* SentMemesTableViewCell.swift */,
 			);
 			path = MemeMe1.0;
 			sourceTree = "<group>";
