@@ -227,6 +227,11 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         appDelegate.memes.append(meme)
         
     }
+    
+    @IBAction func cancel (_ sender: AnyObject) {
+        print("Cancelled")
+        let _ = navigationController?.popViewController(animated: true)
+    }
  
 }
 
