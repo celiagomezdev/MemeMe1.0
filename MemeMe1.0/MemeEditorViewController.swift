@@ -230,7 +230,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     
     @IBAction func cancel (_ sender: AnyObject) {
         print("Cancelled")
-        let _ = navigationController?.popViewController(animated: true)
+        dismiss(animated: true, completion: nil)
     }
  
 }

@@ -239,12 +239,6 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="memeDataLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="okN-Ep-tvA">
-                                            <rect key="frame" x="132" y="57" width="125" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="NmY-QN-dN5" secondAttribute="bottom" id="7bg-YI-3Fd"/>
@@ -254,9 +248,7 @@
                                         <constraint firstAttribute="trailingMargin" secondItem="5Ad-mr-p0M" secondAttribute="trailing" constant="220" id="Mtf-Nd-Zka"/>
                                         <constraint firstItem="Epj-Ud-ocU" firstAttribute="top" secondItem="fyv-U9-45l" secondAttribute="topMargin" constant="20" id="OK7-Y5-4h8"/>
                                         <constraint firstItem="b0z-UF-ZGw" firstAttribute="top" secondItem="fyv-U9-45l" secondAttribute="topMargin" id="Tim-p2-4FK"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="okN-Ep-tvA" secondAttribute="trailing" constant="110" id="YFw-dv-48c"/>
                                         <constraint firstItem="5Ad-mr-p0M" firstAttribute="top" secondItem="Epj-Ud-ocU" secondAttribute="bottom" constant="26" id="aPN-VC-qar"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="okN-Ep-tvA" secondAttribute="bottom" constant="18" id="er4-bO-odP"/>
                                         <constraint firstItem="5Ad-mr-p0M" firstAttribute="leading" secondItem="fyv-U9-45l" secondAttribute="leadingMargin" constant="11" id="jsG-12-edv"/>
                                         <constraint firstAttribute="trailing" secondItem="NmY-QN-dN5" secondAttribute="trailing" constant="251" id="lis-vz-sgk"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="b0z-UF-ZGw" secondAttribute="trailing" constant="250" id="qvn-wi-N8M"/>
@@ -268,7 +260,6 @@
                                 <connections>
                                     <outlet property="bottomTextLabel" destination="5Ad-mr-p0M" id="Vdj-aj-Xz9"/>
                                     <outlet property="imageTableView" destination="NmY-QN-dN5" id="LsP-7C-I4I"/>
-                                    <outlet property="memeDataLabel" destination="okN-Ep-tvA" id="Bme-IO-xoS"/>
                                     <outlet property="memeTextLabel" destination="Epj-Ud-ocU" id="M2h-SU-hk3"/>
                                     <outlet property="topTextLabel" destination="b0z-UF-ZGw" id="E3i-9O-6O6"/>
                                 </connections>

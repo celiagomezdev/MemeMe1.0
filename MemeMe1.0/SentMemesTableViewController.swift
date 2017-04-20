@@ -32,6 +32,7 @@ class SentMemesTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return self.memes.count
     }
+    
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -41,9 +42,14 @@ class SentMemesTableViewController: UITableViewController {
         let meme = self.memes[(indexPath as NSIndexPath).row]
         
         cell.topTextLabel?.text = meme.topText!
+        cell.bottomTextLabel?.text = meme.bottomText!
+        cell.imageTableView?.image = meme.originalImage!
+        cell.memeTextLabel?.text = "\(meme.topText) ... \(meme.bottomText)"
 
         return cell
     }
+    
+
 
     /*
     // Override to support conditional editing of the table view.
