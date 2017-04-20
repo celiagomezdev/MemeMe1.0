@@ -109,6 +109,41 @@
             </objects>
             <point key="canvasLocation" x="2636" y="34"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="qAu-55-Xzj">
+            <objects>
+                <navigationController id="WWB-RX-naS" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="7wY-0r-RoG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="I6p-Cf-951" kind="relationship" relationship="rootViewController" id="qiq-gm-rWP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Kl-wI-Eyi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3894" y="34"/>
+        </scene>
+        <!--Selected Meme View Controller-->
+        <scene sceneID="cCr-IC-2eQ">
+            <objects>
+                <viewController storyboardIdentifier="SelectedMemeViewController" id="I6p-Cf-951" userLabel="Selected Meme View Controller" customClass="SelectedMemeViewController" customModule="MemeMe1_0" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="drf-mU-xZk"/>
+                        <viewControllerLayoutGuide type="bottom" id="kim-dj-efp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hZN-dd-Uaw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.75298660470000001" green="1" blue="0.99141464739999996" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="zcC-xG-sdH"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lx2-kO-e9e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4642" y="37"/>
+        </scene>
         <!--Collection-->
         <scene sceneID="58q-Zk-bto">
             <objects>
@@ -284,6 +319,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="nFP-oi-Fdb"/>
+        <segue reference="ZJY-cy-1g5"/>
     </inferredMetricsTieBreakers>
 </document>
