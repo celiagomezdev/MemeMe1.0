@@ -10,12 +10,12 @@ import UIKit
 
 class SentMemesTableViewController: UITableViewController {
     
-    var memes: [Meme]!
+    var memes: [Meme]! {
+        return (UIApplication.shared.delegate as! AppDelegate).memes
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        memes = appDelegate.memes
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -26,7 +26,6 @@ class SentMemesTableViewController: UITableViewController {
 
 
     // MARK: - Table view data source
-
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
@@ -44,7 +43,7 @@ class SentMemesTableViewController: UITableViewController {
         cell.topTextLabel?.text = meme.topText!
         cell.bottomTextLabel?.text = meme.bottomText!
         cell.imageTableView?.image = meme.originalImage!
-        cell.memeTextLabel?.text = "\(meme.topText) ... \(meme.bottomText)"
+        cell.memeTextLabel?.text = "\(meme.topText!) ... \(meme.bottomText!)"
 
         return cell
     }

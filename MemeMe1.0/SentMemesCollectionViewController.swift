@@ -12,7 +12,9 @@ private let reuseIdentifier = "Cell"
 
 class SentMemesCollectionViewController: UICollectionViewController {
     
-    var memes: [Meme]!
+    var memes: [Meme]! {
+        return (UIApplication.shared.delegate as! AppDelegate).memes
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,9 +24,7 @@ class SentMemesCollectionViewController: UICollectionViewController {
 
         // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-        
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        memes = appDelegate.memes
+    
 
         // Do any additional setup after loading the view.
     }
