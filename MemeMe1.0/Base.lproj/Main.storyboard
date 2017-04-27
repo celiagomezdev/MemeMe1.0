@@ -235,10 +235,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="flowLayout" destination="1oa-b0-dp5" id="3Zp-Vz-GJw"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hB8-cm-WHu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1800.8" y="-441.22938530734638"/>
+            <point key="canvasLocation" x="1800.5" y="-441.5"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="a31-Jf-u4w">
@@ -362,6 +365,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ZJY-cy-1g5"/>
+        <segue reference="nFP-oi-Fdb"/>
     </inferredMetricsTieBreakers>
 </document>
