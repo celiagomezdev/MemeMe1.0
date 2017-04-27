@@ -113,7 +113,7 @@
         <scene sceneID="qAu-55-Xzj">
             <objects>
                 <navigationController id="WWB-RX-naS" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7wY-0r-RoG">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="7wY-0r-RoG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -149,7 +149,7 @@
             <objects>
                 <navigationController id="dSa-uZ-hZV" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Collection" id="rZo-5H-aYn"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aEX-4L-Gpg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="aEX-4L-Gpg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -165,7 +165,7 @@
         <scene sceneID="kma-V1-kPE">
             <objects>
                 <collectionViewController id="Cxu-Ci-zsF" customClass="SentMemesCollectionViewController" customModule="MemeMe1_0" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="0MY-os-DPp">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="0MY-os-DPp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -183,7 +183,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KWC-e2-jnz">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KWC-e2-jnz">
                                             <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXq-ca-XAa">
@@ -263,7 +263,7 @@
             <objects>
                 <navigationController id="SDt-Kb-UFA" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Table" id="fy1-Cx-tu6"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Kvw-kx-3ft">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Kvw-kx-3ft">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -362,6 +362,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="nFP-oi-Fdb"/>
+        <segue reference="ZJY-cy-1g5"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -54,13 +54,28 @@ class SentMemesCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MemesCollectionViewCell", for: indexPath)
-    
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MemesCollectionViewCell", for: indexPath) as!SentMemesCollectionViewCell
         
+        let meme = self.memes[(indexPath as NSIndexPath).row]
+        
+        cell.topTextLabel!.text = meme.topText!
+        cell.bottomTextLabel!.text = meme.bottomText!
+        cell.memeImageView!.image = meme.originalImage!
         // Configure the cell
     
         return cell
     }
+    
+    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        
+        let detailController = self.storyboard!.instantiateViewController(withIdentifier: "SelectedMemeViewController") as! SelectedMemeViewController
+        detailController.meme = self.memes[(indexPath as NSIndexPath).row]
+        self.navigationController!.pushViewController(detailController, animated: true)
+        
+        return true
+    }
+    
+    
 
     // MARK: UICollectionViewDelegate
 
@@ -70,13 +85,9 @@ class SentMemesCollectionViewController: UICollectionViewController {
         return true
     }
     */
+    
 
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
+
 
     /*
     // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
