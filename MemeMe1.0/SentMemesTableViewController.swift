@@ -10,21 +10,17 @@ import UIKit
 
 class SentMemesTableViewController: UITableViewController {
     
-    var memes: [Meme]! {
-        return (UIApplication.shared.delegate as! AppDelegate).memes
-    }
+    var memes: [Meme] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-       //         self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.navigationItem.leftBarButtonItem = self.editButtonItem
     }
 
-
+    override func viewWillAppear(_ animated: Bool) {
+        memes = (UIApplication.shared.delegate as! AppDelegate).memes
+        self.tableView?.reloadData()
+    }
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -32,8 +28,6 @@ class SentMemesTableViewController: UITableViewController {
         return self.memes.count
     }
     
-
-
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "memesTableCellID") as! SentMemesTableViewCell

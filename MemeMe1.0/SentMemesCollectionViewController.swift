@@ -12,9 +12,8 @@ class SentMemesCollectionViewController: UICollectionViewController {
     
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     
-    var memes: [Meme]! {
-        return (UIApplication.shared.delegate as! AppDelegate).memes
-    }
+    var memes: [Meme] = []
+
     
     func adjustFlowLayout(size: CGSize) {
         let space: CGFloat = 1.0
@@ -26,12 +25,13 @@ class SentMemesCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.leftBarButtonItem = self.editButtonItem
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-
-        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        memes = (UIApplication.shared.delegate as! AppDelegate).memes
+        self.collectionView?.reloadData()
     }
 
     // MARK: UICollectionViewDataSource
