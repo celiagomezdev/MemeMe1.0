@@ -8,20 +8,19 @@
 
 import UIKit
 
-class SentMemesCollectionViewController: UICollectionViewController {
+class SentMemesCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     
     var memes: [Meme] = []
 
-    
-    func adjustFlowLayout(size: CGSize) {
-        let space: CGFloat = 1.0
-        let dimension:CGFloat = size.width >= size.height ? (size.width - (5 * space)) / 6.0 :  (size.width - (2 * space)) / 3.0
-        flowLayout.minimumLineSpacing = 1.0
-        flowLayout.minimumInteritemSpacing = 0.0
-        flowLayout.itemSize = CGSize(width: dimension, height: dimension)
-    }
+//    func adjustFlowLayout(size: CGSize) {
+//        let space: CGFloat = 0.5
+//        let dimension: CGFloat = size.width >= size.height ? (size.width - (3 * space)) / 4.0 :  (size.width - (2 * space)) / 3.0
+//        flowLayout.minimumLineSpacing = 0.5
+//        flowLayout.minimumInteritemSpacing = 0.0
+//        flowLayout.itemSize = CGSize(width: dimension, height: dimension)
+//    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +34,7 @@ class SentMemesCollectionViewController: UICollectionViewController {
     }
 
     // MARK: UICollectionViewDataSource
-
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
         return self.memes.count
@@ -66,5 +65,21 @@ class SentMemesCollectionViewController: UICollectionViewController {
         self.navigationController!.pushViewController(detailController, animated: true)
 
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = collectionView.frame.width / 3 - 1
+        return CGSize(width: width, height: width)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 1.0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 1.0
+        
+    }
+    
+    
 
 }
