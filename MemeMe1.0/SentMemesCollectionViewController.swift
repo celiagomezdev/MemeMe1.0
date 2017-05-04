@@ -14,14 +14,6 @@ class SentMemesCollectionViewController: UICollectionViewController, UICollectio
     
     var memes: [Meme] = []
 
-//    func adjustFlowLayout(size: CGSize) {
-//        let space: CGFloat = 0.5
-//        let dimension: CGFloat = size.width >= size.height ? (size.width - (3 * space)) / 4.0 :  (size.width - (2 * space)) / 3.0
-//        flowLayout.minimumLineSpacing = 0.5
-//        flowLayout.minimumInteritemSpacing = 0.0
-//        flowLayout.itemSize = CGSize(width: dimension, height: dimension)
-//    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.leftBarButtonItem = self.editButtonItem
@@ -39,19 +31,21 @@ class SentMemesCollectionViewController: UICollectionViewController, UICollectio
         // #warning Incomplete implementation, return the number of items
         return self.memes.count
     }
-
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MemesCollectionViewCell", for: indexPath) as! SentMemesCollectionViewCell
         
         let meme = self.memes[(indexPath as NSIndexPath).row]
         
+        // Configure the cell
         cell.topTextLabel!.text = meme.topText!
+        SentMemesTableViewController().configureLabelText(cell.topTextLabel!)
         cell.topTextLabel.sizeToFit()
         cell.bottomTextLabel!.text = meme.bottomText!
+        SentMemesTableViewController().configureLabelText(cell.bottomTextLabel!)
         cell.bottomTextLabel.sizeToFit()
         cell.memeImageView!.image = meme.originalImage!
-        // Configure the cell
     
         return cell
     }

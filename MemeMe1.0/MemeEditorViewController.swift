@@ -24,7 +24,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     @IBOutlet weak var topToolBarTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var imageViewTopConstraint: NSLayoutConstraint!
     
-    
+ 
     private func configureText(_ textField: UITextField) {
         
         let centeringText = NSMutableParagraphStyle()
@@ -178,8 +178,6 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         
     }
     
-    
-    
     func generateMemedImage() -> UIImage {
         // Render view to an image
         self.navigationController?.setNavigationBarHidden(true, animated: false)
@@ -212,7 +210,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
             save()
         }
         else {
-            print("Bad user canceled sharing")
+            print("User canceled sharing")
         }
     }
     
