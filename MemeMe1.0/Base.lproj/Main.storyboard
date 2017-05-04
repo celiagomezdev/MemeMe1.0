@@ -136,13 +136,26 @@
                     <view key="view" contentMode="scaleToFill" id="hZN-dd-Uaw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.75298660470000001" green="1" blue="0.99141464739999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oxf-Iw-gNI">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="oxf-Iw-gNI" firstAttribute="leading" secondItem="hZN-dd-Uaw" secondAttribute="leading" id="5ng-yn-qDT"/>
+                            <constraint firstItem="kim-dj-efp" firstAttribute="top" secondItem="oxf-Iw-gNI" secondAttribute="bottom" id="bsP-7a-JDd"/>
+                            <constraint firstItem="oxf-Iw-gNI" firstAttribute="top" secondItem="drf-mU-xZk" secondAttribute="bottom" id="s8g-ZT-oRx"/>
+                            <constraint firstAttribute="trailing" secondItem="oxf-Iw-gNI" secondAttribute="trailing" id="v2D-bG-fPO"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="zcC-xG-sdH"/>
+                    <navigationItem key="navigationItem" title="Meme" id="Q38-ZJ-U1H"/>
+                    <connections>
+                        <outlet property="memedImage" destination="oxf-Iw-gNI" id="yLV-Km-nHk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lx2-kO-e9e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4642" y="37"/>
+            <point key="canvasLocation" x="4640.8000000000002" y="36.431784107946029"/>
         </scene>
         <!--Collection-->
         <scene sceneID="58q-Zk-bto">
