@@ -16,6 +16,7 @@ class SelectedMemeViewController: UIViewController {
     override func viewDidLoad() {
          // Do any additional setup after loading the view.
         super.viewDidLoad()
+        self.tabBarController?.tabBar.isHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
