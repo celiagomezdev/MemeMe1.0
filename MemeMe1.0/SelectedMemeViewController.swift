@@ -21,5 +21,18 @@ class SelectedMemeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.memedImage.image = meme.memedImage!
+        tabBarItem.isEnabled = false
     }
+    
+    //Offer the option to share again
+    @IBAction func shareAgain(_ sender: Any) {
+        let image = meme.memedImage!
+        let controller = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+        //Disable save option as it is already saved
+        controller.excludedActivityTypes = [UIActivityType.saveToCameraRoll]
+        self.present(controller, animated: true, completion: nil)
+
+    }
+
+    
 }

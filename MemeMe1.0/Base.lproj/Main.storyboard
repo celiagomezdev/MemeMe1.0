@@ -109,22 +109,6 @@
             </objects>
             <point key="canvasLocation" x="2636" y="33.733133433283363"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="qAu-55-Xzj">
-            <objects>
-                <navigationController id="WWB-RX-naS" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="7wY-0r-RoG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="I6p-Cf-951" kind="relationship" relationship="rootViewController" id="qiq-gm-rWP"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0Kl-wI-Eyi" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3894" y="34"/>
-        </scene>
         <!--Selected Meme View Controller-->
         <scene sceneID="cCr-IC-2eQ">
             <objects>
@@ -138,7 +122,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oxf-Iw-gNI">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
                         </subviews>
                         <constraints>
@@ -148,14 +133,20 @@
                             <constraint firstAttribute="trailing" secondItem="oxf-Iw-gNI" secondAttribute="trailing" id="v2D-bG-fPO"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Meme" id="Q38-ZJ-U1H"/>
+                    <navigationItem key="navigationItem" title="Meme" id="Q38-ZJ-U1H">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="qDG-kB-4HB">
+                            <connections>
+                                <action selector="shareAgain:" destination="I6p-Cf-951" id="uxN-Bn-ySd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="memedImage" destination="oxf-Iw-gNI" id="yLV-Km-nHk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lx2-kO-e9e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4640.8000000000002" y="36.431784107946029"/>
+            <point key="canvasLocation" x="3494" y="34"/>
         </scene>
         <!--Collection-->
         <scene sceneID="58q-Zk-bto">
@@ -377,6 +368,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ZJY-cy-1g5"/>
+        <segue reference="nFP-oi-Fdb"/>
     </inferredMetricsTieBreakers>
 </document>
