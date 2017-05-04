@@ -184,7 +184,8 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         bottomToolBar.isHidden = true
         topToolBar.isHidden = true
         
-        UIGraphicsBeginImageContext(self.view.frame.size)
+        //Save image in HQ
+        UIGraphicsBeginImageContextWithOptions(self.view.frame.size, false, 0);
         view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
         let memeImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
