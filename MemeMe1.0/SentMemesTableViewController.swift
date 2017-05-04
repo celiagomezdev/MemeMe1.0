@@ -20,6 +20,7 @@ class SentMemesTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         memes = (UIApplication.shared.delegate as! AppDelegate).memes
         self.tableView?.reloadData()
+        self.tabBarController?.tabBar.isHidden = false
     }
     
     // MARK: - Table view data source

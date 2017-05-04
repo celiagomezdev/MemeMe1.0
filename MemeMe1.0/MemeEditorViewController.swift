@@ -163,7 +163,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        if textField.text!.characters.count == 0 {
+        if textField.text?.characters.count == 0 {
             textField.text = ""
         }
     }

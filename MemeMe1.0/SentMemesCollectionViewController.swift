@@ -13,18 +13,18 @@ class SentMemesCollectionViewController: UICollectionViewController, UICollectio
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     
     var memes: [Meme] = []
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.leftBarButtonItem = self.editButtonItem
-
+        self.tabBarController?.tabBar.isHidden = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
         memes = (UIApplication.shared.delegate as! AppDelegate).memes
         self.collectionView?.reloadData()
     }
-
+    
     // MARK: UICollectionViewDataSource
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -39,14 +39,14 @@ class SentMemesCollectionViewController: UICollectionViewController, UICollectio
         let meme = self.memes[(indexPath as NSIndexPath).row]
         
         // Configure the cell
-        cell.topTextLabel!.text = meme.topText!
+        cell.topTextLabel.text = meme.topText
         SentMemesTableViewController().configureLabelText(cell.topTextLabel!)
         cell.topTextLabel.sizeToFit()
-        cell.bottomTextLabel!.text = meme.bottomText!
+        cell.bottomTextLabel.text = meme.bottomText
         SentMemesTableViewController().configureLabelText(cell.bottomTextLabel!)
         cell.bottomTextLabel.sizeToFit()
-        cell.memeImageView!.image = meme.originalImage!
-    
+        cell.memeImageView.image = meme.originalImage
+        
         return cell
     }
     
@@ -57,10 +57,10 @@ class SentMemesCollectionViewController: UICollectionViewController, UICollectio
         
         detailController.meme = self.memes[(indexPath as NSIndexPath).row]
         self.navigationController!.pushViewController(detailController, animated: true)
-
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
         let width = collectionView.frame.width / 3 - 1
         return CGSize(width: width, height: width)
     }
@@ -71,9 +71,5 @@ class SentMemesCollectionViewController: UICollectionViewController, UICollectio
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 1.0
-        
     }
-    
-    
-
 }

@@ -148,11 +148,11 @@
             </objects>
             <point key="canvasLocation" x="3494" y="34"/>
         </scene>
-        <!--Collection-->
+        <!--Navigation Controller-->
         <scene sceneID="58q-Zk-bto">
             <objects>
                 <navigationController id="dSa-uZ-hZV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Collection" id="rZo-5H-aYn"/>
+                    <tabBarItem key="tabBarItem" image="icons8-grid_filled" id="rZo-5H-aYn"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="aEX-4L-Gpg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -264,11 +264,11 @@
             </objects>
             <point key="canvasLocation" x="102" y="34"/>
         </scene>
-        <!--Table-->
+        <!--Navigation Controller-->
         <scene sceneID="Vda-t2-UbV">
             <objects>
                 <navigationController id="SDt-Kb-UFA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Table" id="fy1-Cx-tu6"/>
+                    <tabBarItem key="tabBarItem" title="" image="icons8-bulleted_list_filled" id="fy1-Cx-tu6"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Kvw-kx-3ft">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -367,7 +367,11 @@
             <point key="canvasLocation" x="1800.8" y="561.76911544227892"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icons8-bulleted_list_filled" width="25" height="25"/>
+        <image name="icons8-grid_filled" width="25" height="25"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="nFP-oi-Fdb"/>
+        <segue reference="ZJY-cy-1g5"/>
     </inferredMetricsTieBreakers>
 </document>
