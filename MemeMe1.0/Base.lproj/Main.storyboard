@@ -152,8 +152,8 @@
         <scene sceneID="58q-Zk-bto">
             <objects>
                 <navigationController id="dSa-uZ-hZV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" image="icons8-grid_filled" id="rZo-5H-aYn"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="aEX-4L-Gpg">
+                    <tabBarItem key="tabBarItem" image="icons8-activity_grid_2_filled" id="rZo-5H-aYn"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aEX-4L-Gpg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -169,7 +169,7 @@
         <scene sceneID="kma-V1-kPE">
             <objects>
                 <collectionViewController id="Cxu-Ci-zsF" customClass="SentMemesCollectionViewController" customModule="MemeMe1_0" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="0MY-os-DPp">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="0MY-os-DPp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -268,8 +268,8 @@
         <scene sceneID="Vda-t2-UbV">
             <objects>
                 <navigationController id="SDt-Kb-UFA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="icons8-bulleted_list_filled" id="fy1-Cx-tu6"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Kvw-kx-3ft">
+                    <tabBarItem key="tabBarItem" title="" image="icons8-drag_list_down_filled" id="fy1-Cx-tu6"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Kvw-kx-3ft">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -368,8 +368,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icons8-bulleted_list_filled" width="25" height="25"/>
-        <image name="icons8-grid_filled" width="25" height="25"/>
+        <image name="icons8-activity_grid_2_filled" width="25" height="25"/>
+        <image name="icons8-drag_list_down_filled" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ZJY-cy-1g5"/>
