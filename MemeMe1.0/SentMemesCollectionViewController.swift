@@ -17,12 +17,12 @@ class SentMemesCollectionViewController: UICollectionViewController, UICollectio
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.leftBarButtonItem = self.editButtonItem
-        self.tabBarController?.tabBar.isHidden = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
         memes = (UIApplication.shared.delegate as! AppDelegate).memes
         self.collectionView?.reloadData()
+        self.tabBarController?.tabBar.isHidden = false
     }
     
     // MARK: UICollectionViewDataSource
