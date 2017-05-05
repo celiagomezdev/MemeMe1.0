@@ -24,41 +24,17 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     @IBOutlet weak var topToolBarTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var imageViewTopConstraint: NSLayoutConstraint!
     
- 
-    private func configureText(_ textField: UITextField) {
-        
-        let centeringText = NSMutableParagraphStyle()
-        centeringText.alignment = .center
-        
-        let memeTextAttributes: [String:Any] = [
-            NSStrokeColorAttributeName : UIColor.black,
-            NSForegroundColorAttributeName : UIColor.white,
-            NSFontAttributeName : UIFont(name: "Impact", size: 40)!,
-            NSStrokeWidthAttributeName : -5.0,
-            NSParagraphStyleAttributeName : centeringText
-        ]
-        
-        textField.defaultTextAttributes = memeTextAttributes
-        textField.delegate = self
-        
-    }
-    
-    //Placeholder Text Attributes
-    let placeholderTextAttributes: [String:Any] = [
-        NSStrokeColorAttributeName : UIColor.black,
-        NSForegroundColorAttributeName : UIColor.white,
-        NSFontAttributeName : UIFont(name: "Impact", size: 40)!,
-        NSStrokeWidthAttributeName : -5.0,
-        ]
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureText(topTextField)
-        configureText(bottomTextField)
+        TextAttributes().configureText(topTextField)
+        TextAttributes().configureText(bottomTextField)
         topTextField.attributedPlaceholder = NSAttributedString(string: "TOP",
-                                                                attributes: placeholderTextAttributes)
+                                                                attributes: TextAttributes().placeholderTextAttributes)
         bottomTextField.attributedPlaceholder = NSAttributedString(string: "BOTTOM",
-                                                                   attributes: placeholderTextAttributes)
+                                                                   attributes: TextAttributes().placeholderTextAttributes)
+        self.topTextField.delegate = self
+        self.bottomTextField.delegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -68,8 +44,6 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         } else {
             shareButton.isEnabled = true
         }
-        
-        navigationController?.hidesBarsOnTap = true
     }
     
     override func viewWillAppear(_ animated: Bool) {

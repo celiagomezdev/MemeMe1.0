@@ -30,23 +30,6 @@ class SentMemesTableViewController: UITableViewController {
         return self.memes.count
     }
     
-    public func configureLabelText (_ label: UILabel) {
-        
-        let centeringText = NSMutableParagraphStyle()
-        centeringText.alignment = .center
-        
-        let textLabelAttributes: [String:Any] = [
-            NSStrokeColorAttributeName : UIColor.black,
-            NSForegroundColorAttributeName : UIColor.white,
-            NSFontAttributeName : UIFont(name: "Impact", size: 13)!,
-            NSStrokeWidthAttributeName : -5.0,
-            NSParagraphStyleAttributeName : centeringText
-            ]
-            
-        label.attributedText = NSMutableAttributedString(string: label.text!, attributes: textLabelAttributes)
-
-    }
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "memesTableCellID") as! SentMemesTableViewCell
@@ -54,11 +37,9 @@ class SentMemesTableViewController: UITableViewController {
         let meme = self.memes[(indexPath as NSIndexPath).row]
         
         cell.topTextLabel?.text = meme.topText!
-        configureLabelText(cell.topTextLabel)
-        cell.topTextLabel.sizeToFit()
+        TextAttributes().configureLabelText(cell.topTextLabel)
         cell.bottomTextLabel?.text = meme.bottomText!
-        cell.bottomTextLabel.sizeToFit()
-        configureLabelText(cell.bottomTextLabel)
+        TextAttributes().configureLabelText(cell.bottomTextLabel)
         cell.imageTableView?.image = meme.originalImage!
         cell.memeTextLabel?.text = "\(meme.topText!) ... \(meme.bottomText!)"
         cell.memeTextLabel.sizeToFit()

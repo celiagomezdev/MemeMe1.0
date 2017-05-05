@@ -40,11 +40,9 @@ class SentMemesCollectionViewController: UICollectionViewController, UICollectio
         
         // Configure the cell
         cell.topTextLabel.text = meme.topText
-        SentMemesTableViewController().configureLabelText(cell.topTextLabel!)
-        cell.topTextLabel.sizeToFit()
+        TextAttributes().configureLabelText(cell.topTextLabel!)
         cell.bottomTextLabel.text = meme.bottomText
-        SentMemesTableViewController().configureLabelText(cell.bottomTextLabel!)
-        cell.bottomTextLabel.sizeToFit()
+        TextAttributes().configureLabelText(cell.bottomTextLabel!)
         cell.memeImageView.image = meme.originalImage
         
         return cell
